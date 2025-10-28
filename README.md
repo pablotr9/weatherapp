@@ -16,7 +16,7 @@ Ensure you have the following Node.js version installed:
 
     ```bash
     git clone https://github.com/pablotr9/weatherapp.git
-    cd weather-app
+    cd weatherapp
     ```
 
 2.  **Install dependencies:**

@@ -8,14 +8,14 @@ Follow these steps to set up and run the project on your local machine.
 
 Ensure you have the following Node.js version installed:
 
-- **Node.js:** `v22.21.0` (You can use a version manager like [nvm](https://github.com/nvm-sh/nvm) to easily switch versions).
+- **Node.js:** `v22.21.0` (You can use a version manager like [nvm](https://github.com/nvm-sh/nvm)).
 
 ### Installation
 
 1.  **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/your-username/your-repository.git](https://github.com/your-username/your-repository.git)
+    git clone https://github.com/pablotr9/weatherapp.git
     cd weather-app
     ```
 
@@ -25,19 +25,22 @@ Ensure you have the following Node.js version installed:
     npm install
     ```
 
-3.  **Set up environment variables:**
-    This project requires an API key to connect to the weather service.
-
-    - Create a `.env` file in the root of the project.
-    - Add your API key as follows:
-
-    ```env
-    VITE_WEATHER_API_KEY=your_api_key_here
-    ```
-
-4.  **Run the development server:**
+3.  **Run the development server:**
     ```bash
     npm run dev
     ```
 
-Open [http://localhost:5173](http://localhost:5173) (or the port indicated by Vite) in your browser to see the app!
+Open [http://localhost:5173](http://localhost:5173) (or the port indicated by Vite)
+
+## 🎨 Tech Stack & Design Choices
+
+This project is built with the latest versions of **React 19** for the user interface and the **Vite** build tool for an extremely fast development workflow with instant HMR.
+It uses **Typescript** for robust static typing.
+
+For styling and UI, this project uses **shadcn/ui**. It's a collection of reusable components that are installed directly into the codebase, built on **Tailwind CSS** for styling and **Radix UI** for behavior and accessibility.
+
+For the state management, in this simple case only **Zustand** was used as it allows managing global state with minimal boilerplate and a simple hook-based API. **TanStack Query** was used for managing server state, handling data fetching, caching, and synchronization automatically. with Axios for making the actual HTTP requests to the API.
+
+**Zod** has also been used for the schema validation in the form and to validate the API data.
+
+Simple tests for the **weatherCard** component were implemented using **Vitest**, a fast Vite-native test runner, and **React Testing Library** to simulate user interactions.
